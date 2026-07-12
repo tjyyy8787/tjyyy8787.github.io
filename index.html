@@ -32,6 +32,7 @@
       min-height: 100vh;
       -webkit-font-smoothing: antialiased;
       -moz-osx-font-smoothing: grayscale;
+      cursor: url("data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIyNCIgaGVpZ2h0PSIyNCIgdmlld0JveD0iMCAwIDI0IDI0Ij4KICA8ZGVmcz4KICAgIDxmaWx0ZXIgaWQ9ImciIHg9Ii01MCUiIHk9Ii01MCUiIHdpZHRoPSIyMDAlIiBoZWlnaHQ9IjIwMCUiPgogICAgICA8ZmVHYXVzc2lhbkJsdXIgc3RkRGV2aWF0aW9uPSIwLjkiIHJlc3VsdD0iYiIvPgogICAgICA8ZmVNZXJnZT48ZmVNZXJnZU5vZGUgaW49ImIiLz48ZmVNZXJnZU5vZGUgaW49IlNvdXJjZUdyYXBoaWMiLz48L2ZlTWVyZ2U+CiAgICA8L2ZpbHRlcj4KICA8L2RlZnM+CiAgPHBhdGggZmlsdGVyPSJ1cmwoI2cpIiBkPSJNNCAyIEw0IDIwIEw5IDE1IEwxMiAyMiBMMTUgMjEgTDEyIDE0IEwxOSAxNCBaIiBmaWxsPSIjMDBGRkZGIiBzdHJva2U9IiMwMEZGRkYiIHN0cm9rZS13aWR0aD0iMSIgc3Ryb2tlLWxpbmVqb2luPSJyb3VuZCIvPgo8L3N2Zz4K") 4 2, auto;
     }
 
     /* ── Particle Canvas ── */
@@ -831,6 +832,15 @@
       box-shadow: inset 0 0 10px rgba(255, 0, 255, 0.6), 0 0 30px rgba(255, 0, 255, 0.25), 0 12px 40px rgba(0, 0, 0, 0.4);
     }
 
+    .card-telegram {
+      border: 1px solid rgba(46, 169, 232, 0.3);
+      box-shadow: inset 0 0 6px rgba(46, 169, 232, 0.5), 0 0 20px rgba(46, 169, 232, 0.15), 0 8px 32px rgba(0, 0, 0, 0.3);
+    }
+
+    .card-telegram:hover {
+      box-shadow: inset 0 0 10px rgba(46, 169, 232, 0.6), 0 0 30px rgba(46, 169, 232, 0.25), 0 12px 40px rgba(0, 0, 0, 0.4);
+    }
+
     .card-icon {
       width: 48px; height: 48px;
       filter: drop-shadow(0 0 4px currentColor);
@@ -856,6 +866,15 @@
     .label-wechat { color: var(--green); }
     .label-qq { color: var(--cyan); }
     .label-phone { color: var(--magenta); }
+    .label-telegram { color: #2EA9E8; }
+
+    /* ── Cyberpunk cursors ── */
+    a, button, .nav-link, .btn-primary, .contact-card, [onclick], [role="button"] {
+      cursor: url("data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIyNCIgaGVpZ2h0PSIyNCIgdmlld0JveD0iMCAwIDI0IDI0Ij4KICA8ZGVmcz4KICAgIDxmaWx0ZXIgaWQ9ImciIHg9Ii01MCUiIHk9Ii01MCUiIHdpZHRoPSIyMDAlIiBoZWlnaHQ9IjIwMCUiPgogICAgICA8ZmVHYXVzc2lhbkJsdXIgc3RkRGV2aWF0aW9uPSIwLjkiIHJlc3VsdD0iYiIvPgogICAgICA8ZmVNZXJnZT48ZmVNZXJnZU5vZGUgaW49ImIiLz48ZmVNZXJnZU5vZGUgaW49IlNvdXJjZUdyYXBoaWMiLz48L2ZlTWVyZ2U+CiAgICA8L2ZpbHRlcj4KICA8L2RlZnM+CiAgPHBhdGggZmlsdGVyPSJ1cmwoI2cpIiBkPSJNNCAyIEw0IDIwIEw5IDE1IEwxMiAyMiBMMTUgMjEgTDEyIDE0IEwxOSAxNCBaIiBmaWxsPSIjRkYwMEZGIiBzdHJva2U9IiNGRjAwRkYiIHN0cm9rZS13aWR0aD0iMSIgc3Ryb2tlLWxpbmVqb2luPSJyb3VuZCIvPgo8L3N2Zz4K") 4 2, pointer;
+    }
+
+    /* Keep the "禁止点击" button's forbidden cursor */
+    .nav-cta { cursor: not-allowed; }
 
     .contact-particles { position: absolute; pointer-events: none; z-index: 1; }
     .cp-1 { width: 6px; height: 6px; left: 200px; top: 300px; border-radius: 50%; background: rgba(255, 0, 255, 0.6); box-shadow: 0 0 6px rgba(255, 0, 255, 0.4); }
@@ -1285,6 +1304,16 @@
           </svg>
           <span class="card-label label-phone">手机 Phone</span>
           <span class="card-number">16662222404</span>
+          <span class="card-hint">点击复制</span>
+        </div>
+        <!-- Telegram Card -->
+        <div class="contact-card card-telegram" onclick="copyToClipboard('@tjyyy8787', 'Telegram 已复制')">
+          <svg class="card-icon" viewBox="0 0 24 24" fill="none" stroke="#2EA9E8" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M22 2 11 13"/>
+            <path d="M22 2 15 22 11 13 2 9 22 2"/>
+          </svg>
+          <span class="card-label label-telegram">Telegram</span>
+          <span class="card-number">@tjyyy8787</span>
           <span class="card-hint">点击复制</span>
         </div>
       </div>
@@ -1732,6 +1761,135 @@
       // Clean up after animation
       setTimeout(() => coin.remove(), (duration + delay + 0.5) * 1000);
     }
+  </script>
+
+  <!-- ── Background Music ── -->
+  <audio id="bgMusic" loop preload="auto">
+    <source src="bgm.mp3" type="audio/mpeg">
+  </audio>
+
+  <style>
+    .music-toggle {
+      position: fixed;
+      bottom: 32px;
+      right: 32px;
+      width: 52px;
+      height: 52px;
+      border-radius: 50%;
+      background: rgba(5, 0, 24, 0.7);
+      border: 1px solid rgba(0, 255, 255, 0.3);
+      backdrop-filter: blur(12px);
+      -webkit-backdrop-filter: blur(12px);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      cursor: pointer;
+      z-index: 10000;
+      transition: all 0.3s ease;
+      box-shadow: 0 0 16px rgba(0, 255, 255, 0.15);
+    }
+
+    .music-toggle:hover {
+      border-color: rgba(0, 255, 255, 0.6);
+      box-shadow: 0 0 24px rgba(0, 255, 255, 0.35);
+      transform: scale(1.08);
+    }
+
+    .music-toggle svg {
+      width: 22px;
+      height: 22px;
+      fill: var(--cyan);
+      filter: drop-shadow(0 0 4px rgba(0, 255, 255, 0.4));
+    }
+
+    .music-toggle.playing .icon-play { display: none; }
+    .music-toggle:not(.playing) .icon-pause { display: none; }
+
+    .music-toggle.playing {
+      animation: musicPulse 2s ease-in-out infinite;
+    }
+
+    @keyframes musicPulse {
+      0%, 100% { box-shadow: 0 0 16px rgba(0, 255, 255, 0.15); }
+      50% { box-shadow: 0 0 28px rgba(0, 255, 255, 0.4); }
+    }
+
+    /* Equalizer bars */
+    .eq-bars {
+      display: none;
+      gap: 3px;
+      align-items: flex-end;
+      height: 18px;
+    }
+
+    .music-toggle.playing .eq-bars { display: flex; }
+    .music-toggle.playing svg { display: none; }
+
+    .eq-bars span {
+      width: 3px;
+      background: var(--cyan);
+      border-radius: 2px;
+      box-shadow: 0 0 6px rgba(0, 255, 255, 0.5);
+      animation: eqBounce 0.8s ease-in-out infinite;
+    }
+
+    .eq-bars span:nth-child(1) { height: 60%; animation-delay: 0s; }
+    .eq-bars span:nth-child(2) { height: 100%; animation-delay: 0.15s; }
+    .eq-bars span:nth-child(3) { height: 40%; animation-delay: 0.3s; }
+    .eq-bars span:nth-child(4) { height: 80%; animation-delay: 0.45s; }
+
+    @keyframes eqBounce {
+      0%, 100% { transform: scaleY(0.4); }
+      50% { transform: scaleY(1); }
+    }
+  </style>
+
+  <div class="music-toggle" id="musicToggle" title="点击播放/暂停背景音乐">
+    <svg class="icon-play" viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg>
+    <svg class="icon-pause" viewBox="0 0 24 24"><path d="M6 19h4V5H6v14zm8-14v14h4V5h-4z"/></svg>
+    <div class="eq-bars">
+      <span></span><span></span><span></span><span></span>
+    </div>
+  </div>
+
+  <script>
+    (function() {
+      const audio = document.getElementById('bgMusic');
+      const toggle = document.getElementById('musicToggle');
+      const vol = 0.4;
+      audio.volume = vol;
+
+      function playMusic() {
+        audio.play().then(() => {
+          toggle.classList.add('playing');
+        }).catch(() => {
+          // Autoplay blocked — will try on first user interaction
+        });
+      }
+
+      toggle.addEventListener('click', function() {
+        if (audio.paused) {
+          audio.play().then(() => toggle.classList.add('playing'));
+        } else {
+          audio.pause();
+          toggle.classList.remove('playing');
+        }
+      });
+
+      // Try autoplay
+      playMusic();
+
+      // If autoplay blocked, start on first interaction
+      const startOnInteraction = () => {
+        if (audio.paused) playMusic();
+        document.removeEventListener('click', startOnInteraction);
+        document.removeEventListener('scroll', startOnInteraction);
+        document.removeEventListener('keydown', startOnInteraction);
+      };
+      document.addEventListener('click', startOnInteraction);
+      document.addEventListener('scroll', startOnInteraction);
+      document.addEventListener('keydown', startOnInteraction);
+    })();
   </script>
 
 </body>
