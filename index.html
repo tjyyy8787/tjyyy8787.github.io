@@ -22,6 +22,8 @@
 
     * { margin: 0; padding: 0; box-sizing: border-box; }
 
+    .glass { backdrop-filter: blur(20px); -webkit-backdrop-filter: blur(20px); }
+
     html { scroll-behavior: smooth; }
 
     body {
@@ -58,8 +60,6 @@
       top: 0;
       z-index: 100;
       background: var(--nav-bg);
-      backdrop-filter: blur(20px);
-      -webkit-backdrop-filter: blur(20px);
       border-bottom: 1px solid rgba(0, 255, 255, 0.12);
       box-shadow: 0 4px 16px rgba(0, 0, 0, 0.5);
     }
@@ -82,7 +82,6 @@
 
     .nav-link {
       font-size: 14px;
-      font-family: 'Inter', sans-serif;
       text-decoration: none;
       color: rgba(224, 224, 255, 0.6);
       transition: color 0.3s ease;
@@ -120,7 +119,6 @@
       font-weight: 600;
       text-decoration: none;
       transition: all 0.2s ease;
-      font-family: 'Inter', sans-serif;
       cursor: not-allowed;
       user-select: none;
       position: relative;
@@ -225,7 +223,6 @@
     }
 
     .btc-banner-sub {
-      font-family: 'Inter', sans-serif;
       font-size: 18px;
       color: rgba(255, 255, 255, 0.8);
       margin-top: 12px;
@@ -391,7 +388,6 @@
       font-weight: 600;
       text-decoration: none;
       transition: all 0.3s ease;
-      font-family: 'Inter', sans-serif;
       cursor: pointer;
       display: inline-flex;
       align-items: center;
@@ -414,7 +410,6 @@
       font-weight: 500;
       text-decoration: none;
       transition: all 0.3s ease;
-      font-family: 'Inter', sans-serif;
       cursor: pointer;
       display: inline-flex;
       align-items: center;
@@ -515,8 +510,6 @@
 
     .about-card {
       background: var(--glass-bg);
-      backdrop-filter: blur(20px);
-      -webkit-backdrop-filter: blur(20px);
       border: 1px solid var(--glass-border);
       border-radius: 16px;
       padding: 40px;
@@ -623,8 +616,6 @@
       padding: 32px 24px;
       border-radius: 16px;
       background: var(--glass-bg);
-      backdrop-filter: blur(20px);
-      -webkit-backdrop-filter: blur(20px);
       box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
       transition: all 0.3s ease;
       display: flex;
@@ -671,7 +662,6 @@
     .trading-card-title {
       font-size: 18px;
       font-weight: 700;
-      font-family: 'Inter', sans-serif;
     }
 
     .crypto .trading-card-title { color: #FFB800; }
@@ -717,8 +707,6 @@
       padding: 24px 32px;
       border-radius: 16px;
       background: var(--glass-bg);
-      backdrop-filter: blur(20px);
-      -webkit-backdrop-filter: blur(20px);
       border: 1px solid var(--glass-border);
       box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
       display: flex;
@@ -782,20 +770,20 @@
 
     .contact-cards {
       display: flex;
+      flex-wrap: wrap;
       gap: 20px;
     }
 
     .contact-card {
-      flex: 1;
-      padding: 32px;
+      flex: 1 1 calc(25% - 15px);
+      min-width: 180px;
+      padding: 28px 20px;
       border-radius: 16px;
       display: flex;
       flex-direction: column;
       align-items: center;
-      gap: 16px;
+      gap: 14px;
       background: var(--glass-bg);
-      backdrop-filter: blur(20px);
-      -webkit-backdrop-filter: blur(20px);
       box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
       transition: all 0.3s ease;
       cursor: pointer;
@@ -841,6 +829,38 @@
       box-shadow: inset 0 0 10px rgba(46, 169, 232, 0.6), 0 0 30px rgba(46, 169, 232, 0.25), 0 12px 40px rgba(0, 0, 0, 0.4);
     }
 
+    .card-douyin {
+      border: 1px solid rgba(255, 0, 80, 0.3);
+      box-shadow: inset 0 0 6px rgba(255, 0, 80, 0.5), 0 0 20px rgba(0, 242, 234, 0.12), 0 8px 32px rgba(0, 0, 0, 0.3);
+    }
+    .card-douyin:hover {
+      box-shadow: inset 0 0 10px rgba(255, 0, 80, 0.6), 0 0 30px rgba(0, 242, 234, 0.2), 0 12px 40px rgba(0, 0, 0, 0.4);
+    }
+
+    .card-binance {
+      border: 1px solid rgba(240, 185, 11, 0.3);
+      box-shadow: inset 0 0 6px rgba(240, 185, 11, 0.5), 0 0 20px rgba(240, 185, 11, 0.15), 0 8px 32px rgba(0, 0, 0, 0.3);
+    }
+    .card-binance:hover {
+      box-shadow: inset 0 0 10px rgba(240, 185, 11, 0.6), 0 0 30px rgba(240, 185, 11, 0.25), 0 12px 40px rgba(0, 0, 0, 0.4);
+    }
+
+    .card-twitter {
+      border: 1px solid rgba(255, 255, 255, 0.3);
+      box-shadow: inset 0 0 6px rgba(255, 255, 255, 0.4), 0 0 20px rgba(255, 255, 255, 0.1), 0 8px 32px rgba(0, 0, 0, 0.3);
+    }
+    .card-twitter:hover {
+      box-shadow: inset 0 0 10px rgba(255, 255, 255, 0.5), 0 0 30px rgba(255, 255, 255, 0.2), 0 12px 40px rgba(0, 0, 0, 0.4);
+    }
+
+    .card-weibo {
+      border: 1px solid rgba(230, 22, 45, 0.3);
+      box-shadow: inset 0 0 6px rgba(230, 22, 45, 0.5), 0 0 20px rgba(230, 22, 45, 0.15), 0 8px 32px rgba(0, 0, 0, 0.3);
+    }
+    .card-weibo:hover {
+      box-shadow: inset 0 0 10px rgba(230, 22, 45, 0.6), 0 0 30px rgba(230, 22, 45, 0.25), 0 12px 40px rgba(0, 0, 0, 0.4);
+    }
+
     .card-icon {
       width: 48px; height: 48px;
       filter: drop-shadow(0 0 4px currentColor);
@@ -853,9 +873,11 @@
 
     .card-number {
       font-family: 'JetBrains Mono', monospace;
-      font-size: 20px;
+      font-size: 16px;
       font-weight: 700;
       color: var(--text-primary);
+      word-break: break-all;
+      text-align: center;
     }
 
     .card-hint {
@@ -867,6 +889,10 @@
     .label-qq { color: var(--cyan); }
     .label-phone { color: var(--magenta); }
     .label-telegram { color: #2EA9E8; }
+    .label-douyin { color: #FF0050; }
+    .label-binance { color: #F0B90B; }
+    .label-twitter { color: #ffffff; }
+    .label-weibo { color: #E6162D; }
 
     /* ── Cyberpunk cursors ── */
     a, button, .nav-link, .btn-primary, .contact-card, [onclick], [role="button"] {
@@ -885,8 +911,6 @@
       position: relative;
       padding: 60px 120px;
       background: rgba(0, 0, 24, 0.5);
-      backdrop-filter: blur(20px);
-      -webkit-backdrop-filter: blur(20px);
       border-top: 1px solid rgba(0, 255, 255, 0.1);
       box-shadow: inset 0 -1px 4px rgba(0, 255, 255, 0.05);
       overflow: hidden;
@@ -1063,7 +1087,8 @@
       .nav { padding: 0 40px; }
       .about, .contact, .footer, .trading { padding: 60px 40px; }
       .hero-name-en { font-size: 56px; }
-      .contact-cards { flex-direction: column; }
+      .contact-cards { flex-direction: row; }
+      .contact-card { flex: 1 1 calc(50% - 10px); }
       .trading-grid { grid-template-columns: repeat(2, 1fr); }
     }
 
@@ -1079,7 +1104,82 @@
       .hero-buttons { flex-direction: column; }
       .trading-grid { grid-template-columns: 1fr; }
       .trading-quote { flex-direction: column; text-align: center; }
+      .contact-card { flex: 1 1 100%; }
     }
+    .music-toggle {
+      position: fixed;
+      bottom: 32px;
+      right: 32px;
+      width: 52px;
+      height: 52px;
+      border-radius: 50%;
+      background: rgba(5, 0, 24, 0.7);
+      border: 1px solid rgba(0, 255, 255, 0.3);
+      backdrop-filter: blur(12px);
+      -webkit-backdrop-filter: blur(12px);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      cursor: pointer;
+      z-index: 10000;
+      transition: all 0.3s ease;
+      box-shadow: 0 0 16px rgba(0, 255, 255, 0.15);
+    }
+
+    .music-toggle:hover {
+      border-color: rgba(0, 255, 255, 0.6);
+      box-shadow: 0 0 24px rgba(0, 255, 255, 0.35);
+      transform: scale(1.08);
+    }
+
+    .music-toggle svg {
+      width: 22px;
+      height: 22px;
+      fill: var(--cyan);
+      filter: drop-shadow(0 0 4px rgba(0, 255, 255, 0.4));
+    }
+
+    .music-toggle.playing .icon-play { display: none; }
+    .music-toggle:not(.playing) .icon-pause { display: none; }
+
+    .music-toggle.playing {
+      animation: musicPulse 2s ease-in-out infinite;
+    }
+
+    @keyframes musicPulse {
+      0%, 100% { box-shadow: 0 0 16px rgba(0, 255, 255, 0.15); }
+      50% { box-shadow: 0 0 28px rgba(0, 255, 255, 0.4); }
+    }
+
+    /* Equalizer bars */
+    .eq-bars {
+      display: none;
+      gap: 3px;
+      align-items: flex-end;
+      height: 18px;
+    }
+
+    .music-toggle.playing .eq-bars { display: flex; }
+    .music-toggle.playing svg { display: none; }
+
+    .eq-bars span {
+      width: 3px;
+      background: var(--cyan);
+      border-radius: 2px;
+      box-shadow: 0 0 6px rgba(0, 255, 255, 0.5);
+      animation: eqBounce 0.8s ease-in-out infinite;
+    }
+
+    .eq-bars span:nth-child(1) { height: 60%; animation-delay: 0s; }
+    .eq-bars span:nth-child(2) { height: 100%; animation-delay: 0.15s; }
+    .eq-bars span:nth-child(3) { height: 40%; animation-delay: 0.3s; }
+    .eq-bars span:nth-child(4) { height: 80%; animation-delay: 0.45s; }
+
+    @keyframes eqBounce {
+      0%, 100% { transform: scaleY(0.4); }
+      50% { transform: scaleY(1); }
+    }
+  
   </style>
 
 </head>
@@ -1089,12 +1189,12 @@
   <canvas id="particleCanvas"></canvas>
 
   <!-- Toast -->
-  <div class="toast" id="toast"></div>
+  <div class="toast glass" id="toast"></div>
 
   <div class="page">
 
     <!-- ── Navigation ── -->
-    <nav class="nav">
+    <nav class="nav glass">
       <a href="#" class="nav-logo">TANG JIYAO</a>
       <div class="nav-links">
         <a href="#hero" class="nav-link active">首页</a>
@@ -1147,18 +1247,8 @@
       <div class="hero-data data-tl">//SYS_STATUS: ACTIVE</div>
       <div class="hero-data data-br">//COORD: 31.23N 121.47E</div>
 
-      <!-- Decorative Particles -->
-      <div class="hero-particle hp-1"></div>
-      <div class="hero-particle hp-2"></div>
-      <div class="hero-particle hp-3"></div>
-      <div class="hero-particle hp-4"></div>
-      <div class="hero-particle hp-5"></div>
-      <div class="hero-particle hp-6"></div>
-      <div class="hero-particle hp-7"></div>
-      <div class="hero-particle hp-8"></div>
-      <div class="hero-particle hp-9"></div>
-      <div class="hero-particle hp-10"></div>
-      <div class="hero-particle hp-11"></div>
+      <!-- Decorative Particles (generated by JS) -->
+      <div id="hero-particles"></div>
     </section>
 
     <!-- ── About Section ── -->
@@ -1166,7 +1256,7 @@
       <div class="about-glow"></div>
       <p class="about-kicker reveal">ABOUT ME</p>
       <h2 class="about-title reveal reveal-delay-1">关于我</h2>
-      <div class="about-card reveal reveal-delay-2">
+      <div class="about-card glass reveal reveal-delay-2">
         <p class="about-text">一个热爱技术与设计的数字创作者，致力于在虚拟与现实之间搭建桥梁。专注于前端开发、交互设计与数字艺术，相信代码可以像诗歌一样优美，界面可以像画作一样动人。同时，我也是一名活跃在全职市场的交易员——游走于数字货币、期货、外汇与股票之间，在K线的起伏中寻找规律，在风险的边缘管理仓位，在波动的市场中捕捉确定性。</p>
         <div class="tags">
           <span class="tag tag-cyan">前端开发</span>
@@ -1190,7 +1280,7 @@
       <h2 class="trading-title reveal reveal-delay-1">交易领域</h2>
       <div class="trading-grid reveal reveal-delay-2">
         <!-- Crypto -->
-        <div class="trading-card crypto">
+        <div class="trading-card glass crypto">
           <div class="trading-card-icon">
             <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="#FFB800" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
               <circle cx="12" cy="12" r="10"/>
@@ -1211,7 +1301,7 @@
           </div>
         </div>
         <!-- Futures -->
-        <div class="trading-card futures">
+        <div class="trading-card glass futures">
           <div class="trading-card-icon">
             <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="#00FFFF" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
               <path d="M3 17l6-6 4 4 7-7"/>
@@ -1232,7 +1322,7 @@
           </div>
         </div>
         <!-- Forex -->
-        <div class="trading-card forex">
+        <div class="trading-card glass forex">
           <div class="trading-card-icon">
             <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="#FF00FF" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
               <circle cx="12" cy="12" r="10"/>
@@ -1253,7 +1343,7 @@
           </div>
         </div>
         <!-- Stocks -->
-        <div class="trading-card stocks">
+        <div class="trading-card glass stocks">
           <div class="trading-card-icon">
             <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="#00FF88" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
               <rect x="3" y="3" width="18" height="18" rx="2"/>
@@ -1275,7 +1365,7 @@
         </div>
       </div>
       <!-- Trading Quote -->
-      <div class="trading-quote reveal reveal-delay-3">
+      <div class="trading-quote glass reveal reveal-delay-3">
         <span class="trading-quote-icon">"</span>
         <p class="trading-quote-text">市场是非线性系统，<span>风险永远排在收益前面</span>。永远敬畏市场，永远保持纪律，永远不要满仓——这是在交易世界里活下去的<span>第一法则</span>。</p>
       </div>
@@ -1290,7 +1380,7 @@
       <h2 class="contact-title reveal reveal-delay-1">联系方式</h2>
       <div class="contact-cards reveal reveal-delay-2">
         <!-- WeChat Card -->
-        <div class="contact-card card-wechat" onclick="copyToClipboard('wxid_tjyyy8787', '微信已复制')">
+        <div class="contact-card glass card-wechat" onclick="copyToClipboard('wxid_tjyyy8787', '微信已复制')">
           <svg class="card-icon" viewBox="0 0 24 24" fill="none" stroke="#00FF88" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
             <path d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z"/>
           </svg>
@@ -1299,7 +1389,7 @@
           <span class="card-hint">点击复制</span>
         </div>
         <!-- Phone Card -->
-        <div class="contact-card card-phone" onclick="copyToClipboard('16662222404', '手机号已复制')">
+        <div class="contact-card glass card-phone" onclick="copyToClipboard('16662222404', '手机号已复制')">
           <svg class="card-icon" viewBox="0 0 24 24" fill="none" stroke="#FF00FF" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
             <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"/>
           </svg>
@@ -1308,7 +1398,7 @@
           <span class="card-hint">点击复制</span>
         </div>
         <!-- Telegram Card -->
-        <div class="contact-card card-telegram" onclick="copyToClipboard('@tjyyy8787', 'Telegram 已复制')">
+        <div class="contact-card glass card-telegram" onclick="copyToClipboard('@tjyyy8787', 'Telegram 已复制')">
           <svg class="card-icon" viewBox="0 0 24 24" fill="none" stroke="#2EA9E8" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
             <path d="M22 2 11 13"/>
             <path d="M22 2 15 22 11 13 2 9 22 2"/>
@@ -1317,11 +1407,62 @@
           <span class="card-number">@tjyyy8787</span>
           <span class="card-hint">点击复制</span>
         </div>
+        <!-- QQ Card -->
+        <div class="contact-card glass card-qq" onclick="copyToClipboard('792040285', 'QQ 已复制')">
+          <svg class="card-icon" viewBox="0 0 24 24" fill="none" stroke="#00FFFF" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M12 2c-3 0-5 2-5 5 0 1 .3 2 .8 2.8C6.3 10.5 5 12 5 14c0 1 .3 2 .8 2.7-.8.6-1.8 1.6-1.8 2.8 0 .8.6 1.5 1.5 1.5.7 0 1.3-.3 1.8-.7.4 1 1.2 1.7 2.2 1.7h5c1 0 1.8-.7 2.2-1.7.5.4 1.1.7 1.8.7.9 0 1.5-.7 1.5-1.5 0-1.2-1-2.2-1.8-2.8.5-.7.8-1.7.8-2.7 0-2-1.3-3.5-2.8-4.2.5-.8.8-1.8.8-2.8 0-3-2-5-5-5z"/>
+          </svg>
+          <span class="card-label label-qq">QQ</span>
+          <span class="card-number">792040285</span>
+          <span class="card-hint">点击复制</span>
+        </div>
+        <!-- Douyin Card -->
+        <div class="contact-card glass card-douyin" onclick="copyToClipboard('dyid_tjyyy8787', '抖音已复制')">
+          <svg class="card-icon" viewBox="0 0 24 24" fill="none" stroke="#FF0050" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M9 12a4 4 0 1 0 4 4V4c1 2 2.5 3 4.5 3"/>
+            <path d="M17 4v6.5a4.5 4.5 0 1 0 3 4.2"/>
+          </svg>
+          <span class="card-label label-douyin">抖音 Douyin</span>
+          <span class="card-number">dyid_tjyyy8787</span>
+          <span class="card-hint">点击复制</span>
+        </div>
+        <!-- Binance Card -->
+        <div class="contact-card glass card-binance" onclick="copyToClipboard('baid_tjyyy8787', '币安已复制')">
+          <svg class="card-icon" viewBox="0 0 24 24" fill="none" stroke="#F0B90B" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M12 3 4 11l2.5 2.5L12 8l5.5 5.5L20 11z"/>
+            <path d="M4 14l2.5 2.5L12 11l5.5 5.5L20 14"/>
+            <path d="M12 17l2.5-2.5L12 12l-2.5 2.5z"/>
+          </svg>
+          <span class="card-label label-binance">币安 Binance</span>
+          <span class="card-number">baid_tjyyy8787</span>
+          <span class="card-hint">点击复制</span>
+        </div>
+        <!-- Twitter / X Card -->
+        <div class="contact-card glass card-twitter" onclick="copyToClipboard('@wonderful_uuu', 'Twitter 已复制')">
+          <svg class="card-icon" viewBox="0 0 24 24" fill="none" stroke="#ffffff" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M4 4l7.5 10L4.5 20H7l5.5-5.8L17 20h3l-7.8-10.5L19.5 4H17l-5 5.3L8 4z"/>
+          </svg>
+          <span class="card-label label-twitter">推特 Twitter</span>
+          <span class="card-number">@wonderful_uuu</span>
+          <span class="card-hint">点击复制</span>
+        </div>
+        <!-- Weibo Card -->
+        <div class="contact-card glass card-weibo" onclick="copyToClipboard('汤继尧bb', '微博已复制')">
+          <svg class="card-icon" viewBox="0 0 24 24" fill="none" stroke="#E6162D" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M10 12c-3.5 0-6 2-6 4.5S6 21 9.5 21s5.5-2 5.5-4.5S13.5 12 10 12z"/>
+            <path d="M8.5 16.5c0-1 .8-1.8 2-1.8s2 .8 2 1.8-.8 1.8-2 1.8-2-.8-2-1.8z"/>
+            <path d="M16 8c2 0 3 1.5 2.8 3"/>
+            <path d="M16 4c4 0 6 3 5.5 6.5"/>
+          </svg>
+          <span class="card-label label-weibo">微博 Weibo</span>
+          <span class="card-number">汤继尧bb</span>
+          <span class="card-hint">点击复制</span>
+        </div>
       </div>
     </section>
 
     <!-- ── Footer ── -->
-    <footer class="footer">
+    <footer class="footer glass">
       <div class="footer-glow"></div>
       <div class="footer-glow-2"></div>
       <div class="footer-particles fp-1"></div>
@@ -1361,6 +1502,7 @@
     resize();
     window.addEventListener('resize', resize);
 
+    const TRAIL_COLORS = ['#00FFFF', '#FF00FF', '#00FF88', '#FFB800'];
     document.addEventListener('mousemove', (e) => {
       mouse.prevX = mouse.x;
       mouse.prevY = mouse.y;
@@ -1375,39 +1517,26 @@
 
       for (let i = 0; i < steps; i++) {
         const t = i / steps;
-        const px = mouse.prevX + dx * t + (Math.random() - 0.5) * 8;
-        const py = mouse.prevY + dy * t + (Math.random() - 0.5) * 8;
-        const colors = ['#00FFFF', '#FF00FF', '#00FF88', '#FFB800'];
-        const color = colors[Math.floor(Math.random() * colors.length)];
         const size = Math.random() * 5 + 2;
-
         particles.push({
-          x: px, y: py,
-          size: size,
-          color: color,
-          life: 1,
-          decay: Math.random() * 0.015 + 0.008,
-          vx: (Math.random() - 0.5) * 0.5,
-          vy: (Math.random() - 0.5) * 0.5 - 0.3,
+          x: mouse.prevX + dx * t + (Math.random() - 0.5) * 8,
+          y: mouse.prevY + dy * t + (Math.random() - 0.5) * 8,
+          size, color: TRAIL_COLORS[Math.floor(Math.random() * TRAIL_COLORS.length)],
+          life: 1, decay: Math.random() * 0.015 + 0.008,
+          vx: (Math.random() - 0.5) * 0.5, vy: (Math.random() - 0.5) * 0.5 - 0.3,
           glow: size * 3
         });
       }
-    });
 
-    // Also spawn particles occasionally at cursor position
-    document.addEventListener('mousemove', (e) => {
+      // Occasionally spawn random particles at cursor position
       if (Math.random() < 0.3) {
-        const colors = ['#00FFFF', '#FF00FF'];
-        const color = colors[Math.floor(Math.random() * colors.length)];
+        const color = TRAIL_COLORS[Math.floor(Math.random() * 2)];
         particles.push({
           x: e.clientX + (Math.random() - 0.5) * 12,
           y: e.clientY + (Math.random() - 0.5) * 12,
-          size: Math.random() * 4 + 1,
-          color: color,
-          life: 1,
+          size: Math.random() * 4 + 1, color, life: 1,
           decay: Math.random() * 0.02 + 0.01,
-          vx: (Math.random() - 0.5) * 1,
-          vy: (Math.random() - 0.5) * 1,
+          vx: (Math.random() - 0.5), vy: (Math.random() - 0.5),
           glow: 6
         });
       }
@@ -1450,10 +1579,11 @@
         ctx.restore();
       }
 
-      // Draw connecting lines between nearby particles for trail effect
+      // Draw connecting lines between nearby particles (capped for performance)
       ctx.save();
-      for (let i = 0; i < particles.length; i++) {
-        for (let j = i + 1; j < particles.length; j++) {
+      const maxCheck = Math.min(particles.length, 60);
+      for (let i = 0; i < maxCheck; i++) {
+        for (let j = i + 1; j < maxCheck; j++) {
           const dx = particles[i].x - particles[j].x;
           const dy = particles[i].y - particles[j].y;
           const dist = Math.sqrt(dx * dx + dy * dy);
@@ -1474,6 +1604,25 @@
     }
 
     drawParticles();
+
+    // ── Generate Hero Decorative Particles ──
+    (function() {
+      const container = document.getElementById('hero-particles');
+      if (!container) return;
+      const particleData = [
+        [8, 380, 620, '0,255,255', 0.8], [6, 430, 640, '255,0,255', 0.6],
+        [4, 480, 660, '0,255,255', 0.4], [10, 520, 560, '0,255,255', 0.7],
+        [8, 548, 578, '255,0,255', 0.6], [7, 578, 598, '0,255,255', 0.5],
+        [6, 610, 622, '255,0,255', 0.4], [5, 642, 650, '0,255,255', 0.35],
+        [4, 672, 678, '255,0,255', 0.3], [3, 700, 708, '0,255,255', 0.25],
+        [2, 726, 736, '255,0,255', 0.2]
+      ];
+      particleData.forEach(([w, l, t, rgb, a]) => {
+        const d = document.createElement('div');
+        d.style.cssText = `position:absolute;border-radius:50%;pointer-events:none;z-index:1;width:${w}px;height:${w}px;left:${l}px;top:${t}px;background:rgba(${rgb},${a});box-shadow:0 0 ${w}px rgba(${rgb},${a*0.75})`;
+        container.appendChild(d);
+      });
+    })();
 
     // ── Web Audio Sound Effects ──
     let audioCtx = null;
@@ -1556,13 +1705,6 @@
       el.addEventListener('click', () => SFX.click());
     });
 
-    // Toast success sound
-    const originalShowToast = showToast;
-    showToast = function(message) {
-      originalShowToast(message);
-      SFX.success();
-    };
-
     // ── Copy to Clipboard ──
     function copyToClipboard(text, msg) {
       if (navigator.clipboard) {
@@ -1583,6 +1725,7 @@
       toast.textContent = message;
       toast.classList.add('show');
       setTimeout(() => toast.classList.remove('show'), 2000);
+      SFX.success();
     }
 
     // ── Scroll Reveal ──
@@ -1596,34 +1739,27 @@
 
     document.querySelectorAll('.reveal').forEach(el => revealObserver.observe(el));
 
-    // ── Active Nav Link on Scroll ──
+    // ── Scroll: Nav Highlight + Parallax Glow (merged) ──
     const sections = document.querySelectorAll('section[id]');
     const navLinks = document.querySelectorAll('.nav-link');
+    const cyanOrb = document.querySelector('.hero-glow-cyan');
+    const magentaOrb = document.querySelector('.hero-glow-magenta');
 
     window.addEventListener('scroll', () => {
+      const sy = window.scrollY;
+
+      // Nav highlight
       let current = '';
       sections.forEach(section => {
-        const sectionTop = section.offsetTop;
-        if (scrollY >= sectionTop - 200) {
-          current = section.getAttribute('id');
-        }
+        if (sy >= section.offsetTop - 200) current = section.getAttribute('id');
       });
-
       navLinks.forEach(link => {
-        link.classList.remove('active');
-        if (link.getAttribute('href') === '#' + current) {
-          link.classList.add('active');
-        }
+        link.classList.toggle('active', link.getAttribute('href') === '#' + current);
       });
-    });
 
-    // ── Parallax for Glow Orbs ──
-    window.addEventListener('scroll', () => {
-      const scrollY = window.scrollY;
-      const cyanOrb = document.querySelector('.hero-glow-cyan');
-      const magentaOrb = document.querySelector('.hero-glow-magenta');
-      if (cyanOrb) cyanOrb.style.transform = `translateY(${scrollY * 0.15}px) scale(1)`;
-      if (magentaOrb) magentaOrb.style.transform = `translateY(${scrollY * 0.1}px) scale(1)`;
+      // Parallax glow orbs
+      if (cyanOrb) cyanOrb.style.transform = `translateY(${sy * 0.15}px) scale(1)`;
+      if (magentaOrb) magentaOrb.style.transform = `translateY(${sy * 0.1}px) scale(1)`;
     });
 
     // ── Easter Egg: 3-Click Bitcoin Rain ──
@@ -1769,81 +1905,6 @@
     <source src="bgm.mp3" type="audio/mpeg">
   </audio>
 
-  <style>
-    .music-toggle {
-      position: fixed;
-      bottom: 32px;
-      right: 32px;
-      width: 52px;
-      height: 52px;
-      border-radius: 50%;
-      background: rgba(5, 0, 24, 0.7);
-      border: 1px solid rgba(0, 255, 255, 0.3);
-      backdrop-filter: blur(12px);
-      -webkit-backdrop-filter: blur(12px);
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      cursor: pointer;
-      z-index: 10000;
-      transition: all 0.3s ease;
-      box-shadow: 0 0 16px rgba(0, 255, 255, 0.15);
-    }
-
-    .music-toggle:hover {
-      border-color: rgba(0, 255, 255, 0.6);
-      box-shadow: 0 0 24px rgba(0, 255, 255, 0.35);
-      transform: scale(1.08);
-    }
-
-    .music-toggle svg {
-      width: 22px;
-      height: 22px;
-      fill: var(--cyan);
-      filter: drop-shadow(0 0 4px rgba(0, 255, 255, 0.4));
-    }
-
-    .music-toggle.playing .icon-play { display: none; }
-    .music-toggle:not(.playing) .icon-pause { display: none; }
-
-    .music-toggle.playing {
-      animation: musicPulse 2s ease-in-out infinite;
-    }
-
-    @keyframes musicPulse {
-      0%, 100% { box-shadow: 0 0 16px rgba(0, 255, 255, 0.15); }
-      50% { box-shadow: 0 0 28px rgba(0, 255, 255, 0.4); }
-    }
-
-    /* Equalizer bars */
-    .eq-bars {
-      display: none;
-      gap: 3px;
-      align-items: flex-end;
-      height: 18px;
-    }
-
-    .music-toggle.playing .eq-bars { display: flex; }
-    .music-toggle.playing svg { display: none; }
-
-    .eq-bars span {
-      width: 3px;
-      background: var(--cyan);
-      border-radius: 2px;
-      box-shadow: 0 0 6px rgba(0, 255, 255, 0.5);
-      animation: eqBounce 0.8s ease-in-out infinite;
-    }
-
-    .eq-bars span:nth-child(1) { height: 60%; animation-delay: 0s; }
-    .eq-bars span:nth-child(2) { height: 100%; animation-delay: 0.15s; }
-    .eq-bars span:nth-child(3) { height: 40%; animation-delay: 0.3s; }
-    .eq-bars span:nth-child(4) { height: 80%; animation-delay: 0.45s; }
-
-    @keyframes eqBounce {
-      0%, 100% { transform: scaleY(0.4); }
-      50% { transform: scaleY(1); }
-    }
-  </style>
 
   <div class="music-toggle" id="musicToggle" title="点击播放/暂停背景音乐">
     <svg class="icon-play" viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg>
